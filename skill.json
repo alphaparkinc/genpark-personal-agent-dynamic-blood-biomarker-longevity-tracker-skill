@@ -1,0 +1,71 @@
+{
+  "name": "genpark-personal-agent-dynamic-blood-biomarker-longevity-tracker-skill",
+  "title": "Dynamic Blood Biomarker & Longevity Protocol Optimizer Skill",
+  "version": "1.0.0",
+  "description": "Routine blood test panel telemetry ingestion (ApoB, HbA1c, hs-CRP, Vitamin D, eGFR), biological age acceleration scoring, dietary longevity intervention synthesizer, and clinical lab trend tracker for personal health agents. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "organization": {
+    "name": "GenPark Inc.",
+    "url": "https://www.genpark.ai",
+    "linkedin": "https://www.linkedin.com/company/92955550"
+  },
+  "mcp_version": "2024-11-05",
+  "category": "personal-agent",
+  "tools": [
+    {
+      "name": "audit_blood_biomarker_panel",
+      "description": "Evaluate key cardiovascular, metabolic, and inflammatory biomarkers against optimal longevity ranges (e.g. ApoB < 70 mg/dL, hs-CRP < 0.8 mg/L).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "apob_mg_dl": {
+            "type": "number"
+          },
+          "hba1c_pct": {
+            "type": "number"
+          },
+          "hscrp_mg_l": {
+            "type": "number"
+          },
+          "vitamin_d_ng_ml": {
+            "type": "number"
+          },
+          "chronological_age_years": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "apob_mg_dl",
+          "hba1c_pct",
+          "hscrp_mg_l",
+          "chronological_age_years"
+        ]
+      }
+    },
+    {
+      "name": "recommend_longevity_interventions",
+      "description": "Generate evidence-based dietary, supplement, and exercise micro-protocols targeting sub-optimal biomarker deviations.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "primary_risk_factor": {
+            "type": "string",
+            "enum": [
+              "atherogenic_lipids",
+              "glycemic_dysregulation",
+              "systemic_inflammation",
+              "optimal_homeostasis"
+            ]
+          },
+          "estimated_biological_age_delta": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "primary_risk_factor",
+          "estimated_biological_age_delta"
+        ]
+      }
+    }
+  ]
+}
